@@ -34,6 +34,24 @@ npm run build
 3. Build Command: `npm run build`.
 4. Output Directory: `out`.
 
+## GitHub Pages
+
+В проект уже добавлен workflow `.github/workflows/deploy-pages.yml`.
+
+1. Создайте репозиторий на GitHub и загрузите проект в ветку `main`.
+2. Откройте `Settings → Pages`.
+3. В разделе `Build and deployment` выберите `Source: GitHub Actions`.
+4. Сделайте `push` в `main` или запустите workflow вручную во вкладке `Actions`.
+5. После завершения публикации сайт будет доступен по адресу:
+
+```text
+https://USERNAME.github.io/REPOSITORY/
+```
+
+Если репозиторий называется `USERNAME.github.io`, сайт откроется без дополнительного пути. `next.config.mjs` автоматически определяет имя репозитория в GitHub Actions и добавляет нужный `basePath` для project site.
+
+При первом деплое GitHub может попросить подтвердить environment `github-pages`.
+
 ## Netlify / Cloudflare Pages
 
 - Build command: `npm run build`
